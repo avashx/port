@@ -1,0 +1,329 @@
+
+<html>
+<head>
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aman</title>
+    <style>
+
+/* Import Google Font 'Montserrat' */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;700&display=swap");
+
+/* CSS Variables for common values */
+:root {
+  --font-family: "Montserrat", sans-serif;
+  --base-font-size: 0.75rem;
+  --heading-font-size: 3rem;
+  --light-color: #fff;
+  --dark-color: #202125;
+  --accent-color: #c92020;
+  --secondary-accent-color: #14b789;
+  --secondary-light-color: #d5f8ef;
+  --border-radius-circle: 50%;
+  --letter-spacing-base: 0.2em;
+  --button-padding: 1.2em 1.6em;
+}
+
+/* General Reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Ensure the entire height is used for the document */
+html,
+body {
+  height: 100%;
+  font-family: var(--font-family);
+}
+
+/* Section wrapper with counter reset */
+.section-wrapper {
+  height: 100%;
+  counter-reset: section-count;
+  position: relative;
+}
+
+/* Base styles for sections */
+.section {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Light Section Styles */
+.light-section {
+  background-color: var(--light-color);
+  color: var(--dark-color);
+}
+
+/* Dark Section Styles */
+.dark-section {
+  background-color: var(--dark-color);
+  color: var(--accent-color);
+}
+
+/* Color Section Styles */
+.color-section {
+  background-color: var(--secondary-light-color);
+  color: var(--secondary-accent-color);
+}
+
+/* Section heading styling */
+.section-heading {
+  font-size: var(--heading-font-size);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-base);
+  text-align: center;
+  max-width: 380px;
+}
+
+/* Section image styling */
+.section-image {
+  width: 40vmin;
+  min-width: 15rem;
+  max-width: 40vh;
+}
+
+/* Image inside section image */
+.section-image img {
+  max-width: 100%;
+}
+
+/* Button base styles */
+.section-btn {
+  min-width: 16rem;
+  padding: var(--button-padding);
+  letter-spacing: 0.26em;
+  font-weight: 700;
+  font-size: var(--base-font-size);
+  border: 1px solid var(--dark-color);
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 1.5;
+}
+
+/* Button styles specific to light section */
+.light-section .section-btn {
+  color: var(--dark-color);
+  border-color: var(--dark-color);
+}
+
+/* Button styles specific to dark section */
+.dark-section .section-btn {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+/* Button styles specific to color section */
+.color-section .section-btn {
+  color: var(--secondary-accent-color);
+  border-color: var(--secondary-accent-color);
+}
+
+/* Flex container for content alignment within sections */
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: transparent;
+  position: relative;
+}
+
+/* Styling for the counter circle */
+.container:before {
+  position: absolute;
+  left: 20px;
+  top: 40px;
+  height: 40px;
+  width: 40px;
+  border-radius: var(--border-radius-circle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  counter-increment: section-count;
+  content: "" counter(section-count) "";
+}
+
+/* Counter circle specific to light section */
+.light-section .container:before {
+  background-color: var(--dark-color);
+  color: var(--light-color);
+}
+
+/* Counter circle specific to dark section */
+.dark-section .container:before {
+  background-color: var(--accent-color);
+  color: var(--dark-color);
+}
+
+/* Counter circle specific to color section */
+.color-section .container:before {
+  background-color: var(--secondary-accent-color);
+  color: var(--secondary-light-color);
+}
+
+/* Subscribe button styles */
+.subscribe-btn {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  color: var(--accent-color);
+}
+
+/* SVG inside subscribe button */
+.subscribe-btn svg {
+  height: 60px;
+  width: 60px;
+}
+
+/* Floating YouTube Button Styling */
+.youtube-button {
+  position: fixed;
+  bottom: 20px; /* Distance from the bottom */
+  right: 20px; /* Distance from the right */
+  background-color: #ff0000; /* YouTube red color */
+  color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+/* Icon Styling */
+.youtube-button i {
+  font-size: 24px;
+}
+
+/* Hover Effect */
+.youtube-button:hover {
+  background-color: #e60000; /* Darker shade of red */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px); /* Slight upward movement */
+}
+
+
+
+   </style>
+</head>
+<body>
+    
+    
+    <div class="section-wrapper pinned">
+  <!-- Wrapper for all sections, allows for pinning effect -->
+  <div class="section light-section section-pin">
+    <!-- First section with light background -->
+    <div class="container">
+      <!-- Container for content -->
+      <h2 class="section-heading">The Light Heading</h2> <!-- Section heading -->
+      <div class="section-image">
+        <!-- Container for the section image -->
+        <img src="https://i.ibb.co/w4Z4gMP/landing-hero-blanc-2x.webp" alt="landing-hero-blanc-2x"> <!-- Image element -->
+      </div>
+      <a href="#" class="section-btn" target="_blank" rel="noopener noreferrer">Explore More</a>
+      <!-- Button to explore more -->
+    </div>
+  </div>
+  <div class="section dark-section section-pin">
+    <!-- Second section with dark background -->
+    <div class="container">
+      <!-- Container for content -->
+      <h2 class="section-heading">The Dark Heading</h2> <!-- Section heading -->
+      <div class="section-image">
+        <!-- Container for the section image -->
+        <img src="https://i.ibb.co/V3WpGXJ/landing-hero-noir-2x.webp" alt="landing-hero-noir-2x"> <!-- Image element -->
+      </div>
+      <a href="#" class="section-btn" target="_blank" rel="noopener noreferrer">Explore More</a>
+      <!-- Button to explore more -->
+    </div>
+  </div>
+  <div class="section color-section section-pin">
+    <!-- Third section with color background -->
+    <div class="container">
+      <!-- Container for content -->
+      <h2 class="section-heading">The Color Heading</h2> <!-- Section heading -->
+      <div class="section-image">
+        <!-- Container for the section image -->
+        <img src="https://i.ibb.co/w4Z4gMP/landing-hero-blanc-2x.webp" alt="landing-hero-blanc-2x"><!-- Image element -->
+      </div>
+      <a href="#" class="section-btn" target="_blank" rel="noopener noreferrer">Explore More</a>
+      <!-- Button to explore more -->
+    </div>
+  </div>
+</div>
+
+<!-- Floating YouTube Button -->
+<a href="https://www.youtube.com/@PixelPerfectLabs" class="youtube-button" target="_blank">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(255,255,255);transform: ;msFilter:;">
+    <path d="M21.593 7.203a2.506 2.506 0 0 0-1.762-1.766C18.265 5.007 12 5 12 5s-6.264-.007-7.831.404a2.56 2.56 0 0 0-1.766 1.778c-.413 1.566-.417 4.814-.417 4.814s-.004 3.264.406 4.814c.23.857.905 1.534 1.763 1.765 1.582.43 7.83.437 7.83.437s6.265.007 7.831-.403a2.515 2.515 0 0 0 1.767-1.763c.414-1.565.417-4.812.417-4.812s.02-3.265-.407-4.831zM9.996 15.005l.005-6 5.207 3.005-5.212 2.995z"></path>
+  </svg>
+</a>
+    
+    
+    </body>
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+    <script>
+
+// Initialize Lenis for smooth scrolling
+const lenis = new Lenis({
+  smooth: true, // Enable smooth scrolling
+  duration: 1.2 // Adjust the duration for a smoother feel
+});
+
+// RequestAnimationFrame to sync Lenis updates with the scroll position
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+requestAnimationFrame(raf);
+
+// Function to update the translateY position of each container element based on scroll
+const container = document.querySelectorAll(".container");
+
+const mainFunction = (scrollY) => {
+  container.forEach((elm, i) => {
+    // Use translateY for smooth, GPU-accelerated scrolling without layout shifts
+    const translateYValue = -i * 100 + (scrollY / window.innerHeight) * 100;
+    elm.style.transform = `translateY(${translateYValue}vh)`;
+  });
+};
+
+// Sync Lenis with the main function to get smooth updates without flickering
+lenis.on("scroll", ({ scroll }) => {
+  mainFunction(scroll);
+});
+
+// Auto-scroll function
+const autoScroll = () => {
+  const halfWindowHeight = window.innerHeight;
+
+  // Scroll to half the window height
+  lenis.scrollTo(halfWindowHeight, { duration: 0.5, easing: (t) => t });
+
+  // After a delay, scroll back to the top
+  setTimeout(() => {
+    lenis.scrollTo(0, { duration: 1.5, easing: (t) => t });
+  }, 800); // Adjust delay as needed
+};
+
+// Start auto-scroll after a short delay
+setTimeout(autoScroll, 1000); // Start auto-scrolling after 1 second
+
+
+</script>
+    </html>

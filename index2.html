@@ -1,0 +1,367 @@
+
+<html>
+<head>
+    
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+  
+    <title>Aman</title>
+    <style>
+
+/* Import Google Font 'Montserrat' */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;700&display=swap");
+
+/* CSS Variables for common values */
+:root {
+  --font-family: "Montserrat", sans-serif;
+  --base-font-size: 0.75rem;
+  --heading-font-size: 3rem;
+  --light-color: #ECECEC;
+  --dark-color: #363636;
+  --accent-color: #ECECEC;
+  --secondary-accent-color: #14b789;
+  --secondary-light-color: #d5f8ef;
+  --border-radius-circle: 50%;
+  --letter-spacing-base: 0.2em;
+  --button-padding: 1.2em 1.6em;
+}
+
+/* General Reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Ensure the entire height is used for the document */
+html,
+body {
+  height: 100%;
+  font-family: var(--font-family);
+}
+h2{
+
+     margin: 0 0 3.625rem 0;
+      font-size: 3rem;
+      font-weight: 300;
+      line-height: 1.3;
+        font-family: 'Raleway', sans-serif;
+}
+h3 {
+  font-family: 'Roboto Slab', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+/* Section wrapper with counter reset */
+.section-wrapper {
+  height: 100%;
+  counter-reset: section-count;
+  position: relative;
+}
+
+/* Base styles for sections */
+.section {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Light Section Styles */
+.light-section {
+  background-color: var(--light-color);
+  color: var(--dark-color);
+}
+
+/* Dark Section Styles */
+.dark-section {
+  background-color: var(--dark-color);
+  color: var(--accent-color);
+}
+
+/* Color Section Styles */
+.color-section {
+  background-color: var(--secondary-light-color);
+  color: var(--secondary-accent-color);
+}
+
+/* Section heading styling */
+.section-heading {
+  font-size: var(--heading-font-size);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-base);
+  text-align: center;
+  max-width: 380px;
+}
+
+/* Section image styling */
+.section-image {
+  width: 40vmin;
+  min-width: 15rem;
+  max-width: 40vh;
+}
+
+/* Image inside section image */
+.section-image img {
+  max-width: 100%;
+}
+
+/* Button base styles */
+.section-btn {
+  min-width: 16rem;
+  padding: var(--button-padding);
+  letter-spacing: 0.26em;
+  font-weight: 700;
+  font-size: var(--base-font-size);
+  border: 1px solid var(--dark-color);
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 1.5;
+}
+
+/* Button styles specific to light section */
+.light-section .section-btn {
+  color: var(--dark-color);
+  border-color: var(--dark-color);
+}
+
+/* Button styles specific to dark section */
+.dark-section .section-btn {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+/* Button styles specific to color section */
+.color-section .section-btn {
+  color: var(--secondary-accent-color);
+  border-color: var(--secondary-accent-color);
+}
+
+/* Flex container for content alignment within sections */
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: transparent;
+  position: relative;
+}
+
+/* Styling for the counter circle */
+.container:before {
+  position: absolute;
+  left: 20px;
+  top: 40px;
+  height: 40px;
+  width: 40px;
+  border-radius: var(--border-radius-circle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  counter-increment: section-count;
+  content: "" counter(section-count) "";
+}
+
+/* Counter circle specific to light section */
+.light-section .container:before {
+  background-color: var(--dark-color);
+  color: var(--light-color);
+}
+
+/* Counter circle specific to dark section */
+.dark-section .container:before {
+  background-color: var(--accent-color);
+  color: var(--dark-color);
+}
+
+/* Counter circle specific to color section */
+.color-section .container:before {
+  background-color: var(--secondary-accent-color);
+  color: var(--secondary-light-color);
+}
+
+/* s button styles */
+.s-btn {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  color: var(--accent-color);
+}
+
+/* SVG inside s button */
+.s-btn svg {
+  height: 10px;
+  width: 10px;
+}
+
+/* Floating YouTube Button Styling */
+.floatbt {
+  position: fixed;
+  bottom: 20px; /* Distance from the bottom */
+  right: 20px; /* Distance from the right */
+  background-color: #ff0000; /* YouTube red color */
+  color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+/* Icon Styling */
+.floatbt i {
+  font-size: 24px;
+}
+
+/* Hover Effect */
+.floatbt:hover {
+  background-color: #e60000; /* Darker shade of red */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px); /* Slight upward movement */
+}
+
+.srt {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: polygon(0px 0px, 0px 0px, 0px 0px);
+  overflow: hidden !important;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  padding: 3.125rem 1rem 0;
+}
+.site-header__logo {
+  margin: 0;
+  color: #ececec;
+}
+.site-header__actions {
+  display: flex;
+  flex-grow: 1;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: right;
+}
+.site-nav__item {
+  padding-right: 2rem;
+  text-decoration: none;
+  color: #a8a8a8;
+  font-weight: 700;
+  transition: color 0.15s ease-in-out;
+}
+.site-nav__item:hover,
+.site-nav__item.active {
+  color: #ececec;
+}
+.site-nav__item:hover span:after,
+.site-nav__item.active span:after {
+  bottom: -0.5rem;
+  opacity: 1;
+}
+.site-nav__item span {
+  position: relative;
+}
+.site-nav__item span:after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #6f6f6f;
+  opacity: 0;
+  transition: all 0.15s ease-in-out;
+}
+
+    </style>
+</head>
+<body>
+
+
+
+
+  <div class="section dark-section section-pin">
+    <!-- Second section with dark background -->
+    <div class="container">
+      <!-- Container for content -->
+      <h2 class="section-heading">The Dark Heading</h2> 
+      <h3>The world is changing in ways that requires everyone to think like an entrepreneur.<br>
+But do we really have a clear and engaging way?</h3>
+      <div class="section-image">
+        <!-- Container for the section image -->
+        <img src="https://avs.000.pe/ent//wh.png" alt="rocketw"> <!-- Image element -->
+      </div>
+      <a href="#" class="section-btn" target="_blank" rel="noopener noreferrer">Explore More</a>
+      <!-- Button to explore more -->
+    </div>
+  </div>
+
+<div class="section-wrapper pinned">
+  <!-- Wrapper for all sections, allows for pinning effect -->
+  <div class="section light-section section-pin">
+    <!-- First section with light background -->
+    <div class="container">
+      <!-- Container for content -->
+      <h2 class="section-heading">The Light Heading</h2> <!-- Section heading -->
+      <div class="section-image">
+        <!-- Container for the section image -->
+        <img src="https://avs.000.pe/ent//bl.png" alt="rocket"> <!-- Image element -->
+      </div>
+      <a href="#" class="section-btn" target="_blank" rel="noopener noreferrer">Explore More</a>
+      <!-- Button to explore more -->
+    </div>
+  </div>
+
+  <div class="section color-section section-pin">
+    <!-- Third section with color background -->
+    <div class="container">
+      <!-- Container for content -->
+      <h2 class="section-heading">The Color Heading</h2> <!-- Section heading -->
+      <div class="section-image">
+        <!-- Container for the section image -->
+        <img src="https://avs.000.pe/ent//bl.png" alt="rocket"><!-- Image element -->
+      </div>
+      <a href="#" class="section-btn" target="_blank" rel="noopener noreferrer">Explore More</a>
+      <!-- Button to explore more -->
+    </div>
+  </div>
+</div>
+
+<!-- Floating YouTube Button -->
+<a href="" class="floatbt" target="_blank">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M448 256A192 192 0 1 0 64 256a192 192 0 1 0 384 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm256 80a80 80 0 1 0 0-160 80 80 0 1 0 0 160zm0-224a144 144 0 1 1 0 288 144 144 0 1 1 0-288zM224 256a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/></svg>
+
+</a>
+
+
+
+
+
+</body>
+
+
+
+<script>
+
+
+
+</script>
+    </html>
